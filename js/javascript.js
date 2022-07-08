@@ -383,8 +383,6 @@ for (i = 0; i < product.length; i++) {
         let imgHeight = document.querySelector(".slider");
         let height = getComputedStyle(imgHeight).height;
         height = parseInt(height);
-        console.log(typeof height);
-        console.log(height);
         e.preventDefault();
         window.scrollTo({
             top: height - 77,
@@ -393,13 +391,16 @@ for (i = 0; i < product.length; i++) {
     })
 }
 
-document.querySelector(".home").addEventListener('click', function (e) {
-    e.preventDefault();
-    window.scrollTo({
-        top: 1,
-        behavior: "smooth"
+let home = document.querySelectorAll(".home");
+for(let j=0; j<home.length; j++){
+    home[j].addEventListener('click',function(e){
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
     })
-})
+}
 
 
 
